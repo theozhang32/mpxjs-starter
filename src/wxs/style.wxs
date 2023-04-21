@@ -1,0 +1,5 @@
+module.exports.rpx = function (px) {
+  if (typeof px !== 'number') return ''
+  if (px === 0) return 0
+  return px * 2 + 'rpx'
+}
