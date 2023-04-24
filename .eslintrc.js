@@ -2,6 +2,7 @@ module.exports = {
   extends: ['@mpxjs/eslint-config-ts'],
   rules: {
     // .mpx文件规则 https://mpx-ecology.github.io/eslint-plugin-mpx/rules/
+    '@typescript-eslint/no-explicit-any': 0
   },
   overrides: [
     {

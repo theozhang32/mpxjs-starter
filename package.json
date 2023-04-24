@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "mpx-cli-service serve:mp",
     "build": "mpx-cli-service build:mp",
-    "lint": "eslint --ext .js,.ts,.mpx src/"
+    "lint": "eslint --ext --fix .js,.ts,.mpx,.styl src"
   },
   "dependencies": {
     "@mpxjs/api-proxy": "^2.8.0",
@@ -14,6 +14,10 @@
     "@mpxjs/pinia": "^2.8.0",
     "@mpxjs/store": "^2.8.0",
     "@mpxjs/utils": "^2.8.0",
+    "@vant/weapp": "^1.10.16",
+    "dayjs": "^1.11.7",
+    "immer": "^10.0.1",
+    "lodash-es": "^4.17.21",
     "pinia": "^2.0.14",
     "vue": "^2.6.14"
   },
@@ -22,6 +26,7 @@
     "@babel/plugin-transform-runtime": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/runtime-corejs3": "^7.10.4",
+    "@dcasia/mini-program-tailwind-webpack-plugin": "^1.5.6",
     "@mpxjs/babel-plugin-inject-page-events": "^2.8.0",
     "@mpxjs/eslint-config-ts": "^1.0.5",
     "@mpxjs/mpx-cli-service": "^1.0.0",
@@ -38,8 +43,10 @@
     "stylus": "^0.55.0",
     "stylus-loader": "^6.1.0",
     "typescript": "^4.1.3",
+    "vue-cli-plugin-windicss": "^1.1.6",
     "vue-template-compiler": "^2.6.14",
-    "webpack": "^5.43.0"
+    "webpack": "^5.43.0",
+    "windicss": "^3.5.6"
   },
   "browserslist": "ios >= 8, chrome >= 47"
 }

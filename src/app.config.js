@@ -1,0 +1,7 @@
+module.exports = {
+  pages: ['./pages/index/index'],
+  window: {
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTextStyle: 'black'
+  }
+}

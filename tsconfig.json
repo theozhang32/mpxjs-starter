@@ -5,17 +5,12 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ],
-    "types": [
-    ]
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": [],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@vant/weapp/*": ["./node_modules/@vant/weapp/dist/*"]
+    }
   },
-  "exclude": [
-    "build",
-    "dist",
-    "config"
-  ]
+  "exclude": ["build", "dist", "config"]
 }

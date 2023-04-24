@@ -1,0 +1,10 @@
+<script name="json" src="./index.config.js"></script>
+
+<script src="./index.ts"></script>
+<template>
+  <view class="index">{{msg}}</view>
+</template>
+<style lang="stylus">
+.index
+  color #333
+</style>

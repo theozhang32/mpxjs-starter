@@ -1,15 +1,30 @@
 {
-  "setting": {
-    "newFeature": true,
-    "urlCheck": true,
-    "es6": false,
-    "postcss": true,
-    "minified": false,
-    "checkSiteMap": false,
-    "autoAudits": false
-  },
-  "appid": "touristappid",
-  "projectname": "mpxjs-starter",
-  "description": "A mpxjs project scaffold.",
-  "condition": {}
+    "setting": {
+        "newFeature": true,
+        "urlCheck": true,
+        "es6": false,
+        "postcss": true,
+        "minified": false,
+        "checkSiteMap": false,
+        "autoAudits": false,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        }
+    },
+    "appid": "wx6d4a26116e8a5323",
+    "projectname": "mpxjs-starter",
+    "description": "A mpxjs project scaffold.",
+    "condition": {},
+    "compileType": "miniprogram",
+    "libVersion": "2.31.0",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    }
 }
