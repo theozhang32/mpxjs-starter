@@ -1,16 +1,16 @@
 <script name="json">
 module.exports = {
-  component: true,
   usingComponents: {}
 }
 </script>
 
 <script setup lang="ts">
-defineExpose({})
+import { createPage } from '@mpxjs/core'
+createPage({})
 </script>
 
 <template>
-  ${0}
+  <view>SubPackages</view>
 </template>
 
 <style lang="stylus">

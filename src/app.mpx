@@ -1,6 +1,9 @@
 <script name="json">
 module.exports = {
   pages: ['./pages/index/index'],
+  packages: [
+    './packages/sub/app.mpx?root=pkgSub',
+  ],
   window: {
     navigationBarBackgroundColor: '#fff',
     navigationBarTextStyle: 'black'

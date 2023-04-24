@@ -5,7 +5,8 @@ module.exports = {
 </script>
 
 <script setup lang="ts">
-defineExpose({})
+import { createPage } from '@mpxjs/core'
+createPage({})
 </script>
 
 <template>

@@ -1,9 +1,7 @@
 <script name="json">
 module.exports = {
   component: true,
-  usingComponents: {
-    Child: './Child'
-  }
+  usingComponents: {}
 }
 </script>
 
@@ -16,7 +14,9 @@ createComponent({
 </script>
 
 <template>
-  <view class="class {{customClass}}" style="{{customStyle}}">Parent</view>
+  ${0}
 </template>
 
-<style lang="stylus"></style>
+<style lang="stylus">
+
+</style>

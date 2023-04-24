@@ -5,15 +5,16 @@ module.exports = {
 }
 </script>
 
-<script setup lang="ts">
+<script lang="ts">
+import { createComponent } from '@mpxjs/core'
 import { base } from './_mixin'
-defineOptions({
+createComponent({
   mixins: [base]
 })
-defineExpose({})
 </script>
 
 <template>
+  <!-- 嵌套的externalClasses不会生效 -->
   <view class="class">Child</view>
 </template>
 

@@ -7,12 +7,6 @@ module.exports = {
 }
 </script>
 
-<!-- <script setup lang="ts">
-defineExpose({
-  msg: 'Hello World'
-})
-</script> -->
-
 <script lang="ts">
 import { createPage } from '@mpxjs/core'
 createPage({
