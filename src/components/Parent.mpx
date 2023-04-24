@@ -1,0 +1,22 @@
+<script name="json">
+module.exports = {
+  component: true,
+  usingComponents: {
+    Child: './Child'
+  }
+}
+</script>
+
+<script setup lang="ts">
+import { base } from './_mixin'
+defineOptions({
+  mixins: [base]
+})
+defineExpose({})
+</script>
+
+<template>
+  <view class="class {{customClass}}" style="{{customStyle}}">Parent</view>
+</template>
+
+<style lang="stylus"></style>

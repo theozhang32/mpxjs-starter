@@ -1,10 +1,36 @@
-<script name="json" src="./index.config.js"></script>
+<script name="json">
+module.exports = {
+  navigationBarTitleText: '首页',
+  usingComponents: {
+    Parent: '@/components/Parent'
+  }
+}
+</script>
 
-<script src="./index.ts"></script>
+<!-- <script setup lang="ts">
+defineExpose({
+  msg: 'Hello World'
+})
+</script> -->
+
+<script lang="ts">
+import { createPage } from '@mpxjs/core'
+createPage({
+  setup() {
+    return {
+      msg: 'Hello World'
+    }
+  }
+})
+</script>
+
 <template>
-  <view class="index">{{msg}}</view>
+  <view class="w-full text-center text-black">
+    <view>{{msg}}</view>
+    <Parent class="flex" custom-class="items-center" custom-style="font-size:20px;"></Parent>
+  </view>
 </template>
+
 <style lang="stylus">
-.index
-  color #333
+
 </style>

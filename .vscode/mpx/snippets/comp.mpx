@@ -1,0 +1,18 @@
+<script name="json">
+module.exports = {
+  component: true,
+  usingComponents: {}
+}
+</script>
+
+<script setup lang="ts">
+defineExpose({})
+</script>
+
+<template>
+  ${0}
+</template>
+
+<style lang="stylus">
+
+</style>
