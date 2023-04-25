@@ -16,7 +16,13 @@ createComponent({
 </script>
 
 <template>
-  <view class="class {{customClass}}" style="{{customStyle}}">Parent</view>
+  <view class="class {{customClass}}" style="{{customStyle}}">
+    <view>Parent</view>
+    <Child class="font-bold parent-inner-class" />
+  </view>
 </template>
 
-<style lang="stylus"></style>
+<style lang="stylus">
+.parent-inner-class
+  color: white
+</style>

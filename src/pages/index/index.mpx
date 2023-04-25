@@ -1,6 +1,6 @@
 <script name="json">
 module.exports = {
-  navigationBarTitleText: '首页',
+  navigationStyle: 'custom',
   usingComponents: {
     Parent: '@/components/Parent'
   }
@@ -19,12 +19,18 @@ createPage({
 </script>
 
 <template>
+  <NavigationBar background>首页</NavigationBar>
   <view class="w-full text-center text-black">
-    <view>{{msg}}</view>
-    <Parent class="flex" custom-class="items-center" custom-style="font-size:20px;"></Parent>
+    <view>{{ msg }}</view>
+    <Parent
+      class="flex flex-col text-center"
+      custom-class="items-center"
+      custom-style="font-size:20px;"
+    ></Parent>
   </view>
 </template>
 
 <style lang="stylus">
-
+:host
+  --global-page-bg linear-gradient(324deg, #6a75ff 27%, #a7b0fd)
 </style>

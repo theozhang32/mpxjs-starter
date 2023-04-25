@@ -4,9 +4,13 @@ module.exports = {
 }
 </script>
 
-<script setup lang="ts">
+<script lang="ts">
 import { createPage } from '@mpxjs/core'
-createPage({})
+createPage({
+  setup() {
+    return {}
+  }
+})
 </script>
 
 <template>

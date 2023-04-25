@@ -7,6 +7,9 @@ module.exports = {
   window: {
     navigationBarBackgroundColor: '#fff',
     navigationBarTextStyle: 'black'
+  },
+  usingComponents: {
+    NavigationBar: '@/components/NavigationBar',
   }
 }
 </script>
@@ -16,12 +19,20 @@ import mpx, { createApp } from '@mpxjs/core'
 import apiProxy from '@mpxjs/api-proxy'
 import mpxFetch from '@mpxjs/fetch'
 import pinia from './store/_install'
+import { useSystemInfo } from './store'
 
 mpx.use(apiProxy, { usePromise: true })
 mpx.use(mpxFetch)
 mpx.use(pinia)
 
-createApp({})
+useSystemInfo().getSystemInfo()
+
+createApp({
+  onLaunch({ path, scene, query }) {
+    console.log('=== onLaunch ===')
+    console.log(path, scene, query)
+  }
+})
 </script>
 
 <style src="windi.css"></style>

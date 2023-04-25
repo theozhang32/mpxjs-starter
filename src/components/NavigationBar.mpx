@@ -1,0 +1,132 @@
+<script name="json">
+module.exports = {
+  component: true
+}
+</script>
+
+<script lang="ts">
+import mpx, { createComponent, computed } from '@mpxjs/core'
+import { storeToRefs } from '@mpxjs/pinia'
+import { useSystemInfo } from '@/store'
+import { base } from './_mixin'
+
+const icBackWhite =
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNMzc1IDB2MTExMEgwVjBoMzc1eiIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNhKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE2IC01NikiPjxwYXRoIGQ9Im0yNSA1OS03IDcgNyA3IiBzdHJva2U9IiNGRkYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9nPjwvc3ZnPg=='
+const icBackBlack =
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMCAyMCI+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNMzc1IDB2MTExMEgwVjBoMzc1eiIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNhKSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE2IC01NikiPjxwYXRoIGQ9Im0yNSA1OS03IDcgNyA3IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9nPjwvc3ZnPg=='
+
+createComponent({
+  mixins: [base],
+  properties: {
+    theme: {
+      type: String,
+      value: 'black'
+    },
+    backDelta: {
+      type: Number,
+      value: 1
+    },
+    placeholder: {
+      type: Boolean,
+      value: true
+    },
+    background: Boolean,
+    inverted: Boolean,
+    invertedBgOpacity: {
+      type: Number,
+      value: 0
+    }
+  },
+  setup(props) {
+    const { navTotalHeight, statusBarHeight, navBarHeight, fontSizeSetting } =
+      storeToRefs(useSystemInfo())
+    const hasBack = getCurrentPages().length > 1
+    const computedIconBack = computed(() =>
+      props.theme === 'black' ? icBackBlack : icBackWhite
+    )
+    const computedContainerClass = computed(() => {
+      const cls: string[] = []
+      if (props.inverted) {
+        cls.push('navigation-bar--inverted')
+      }
+      if (!props.placeholder) {
+        cls.push('navigation-bar--hollow')
+      }
+      return cls
+    })
+    const onBack = () => {
+      mpx.navigateBack({
+        delta: props.backDelta
+      })
+    }
+
+    return {
+      navTotalHeight,
+      navBarHeight,
+      statusBarHeight,
+      fontSizeSetting,
+      hasBack,
+      computedIconBack,
+      computedContainerClass,
+      onBack
+    }
+  }
+})
+</script>
+
+<template>
+  <view
+    class="navigation-bar relative w-full flex-shrink-0"
+    style="
+      --navigation-height:{{navTotalHeight}}px;
+      --navigation-bar-height:{{navBarHeight}}px;
+      --status-bar-height:{{statusBarHeight}}px;
+      --navigation-bar-bg-opacity:{{invertedBgOpacity}}
+    "
+    wx:class="{{computedContainerClass}}"
+  >
+    <view
+      class="navigation-bar--fixed fixed z-99 top-0 left-0 right-0"
+      style="{{ !inverted && background ? 'background: white;': '' }}"
+    >
+      <view
+        class="relative w-full h-full flex items-center justify-center font-500"
+        style="font-size:{{fontSizeSetting}}px;color:{{theme}};"
+      >
+        <view
+          wx:if="{{hasBack}}"
+          class="p-4px absolute left-12px vertical-center"
+          bind:tap="onBack"
+        >
+          <image
+            src="{{computedIconBack}}"
+            class="block"
+            style="width: 20px; height: 20px"
+          />
+        </view>
+        <slot></slot>
+      </view>
+    </view>
+  </view>
+</template>
+
+<style lang="stylus">
+.navigation-bar
+  height var(--navigation-height, 0)
+  &.navigation-bar--hollow
+    height 0
+  &--fixed
+    padding-top var(--status-bar-height, 0)
+    height var(--navigation-bar-height, 0)
+  &--inverted
+    &::before
+      position fixed
+      content ''
+      z-index 98
+      top 0
+      left 0
+      right 0
+      height var(--navigation-height, 0)
+      background white
+      opacity var(--navigation-bar-bg-opacity, 0)
+</style>

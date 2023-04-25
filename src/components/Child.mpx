@@ -14,8 +14,8 @@ createComponent({
 </script>
 
 <template>
-  <!-- 嵌套的externalClasses不会生效 -->
-  <view class="class">Child</view>
+  <!-- 嵌套的externalClasses 传入全局的class不会生效，但传入直系父组件内的样式可以生效 -->
+  <view class="class">Child is white, but it is not bold</view>
 </template>
 
 <style lang="stylus">
