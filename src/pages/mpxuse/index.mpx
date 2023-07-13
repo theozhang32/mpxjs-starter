@@ -1,0 +1,48 @@
+<script name="json">
+module.exports = {
+  usingComponents: {}
+}
+</script>
+
+<script lang="ts">
+import { createPage } from '@mpxjs/core'
+// 使用mpxuse
+import { useCounter } from '@mpxjs/mpxuse-core'
+
+createPage({
+  setup() {
+    const { count, inc, dec, set, reset } = useCounter()
+    return {
+      count, inc, dec, set, reset
+    }
+  }
+})
+</script>
+
+<template>
+  <view>
+    <view>Count: {{ count }}</view>
+    <button bindtap="inc">
+      Increment
+    </button>
+    <button bindtap="dec">
+      Decrement
+    </button>
+    <button bindtap="inc(5)">
+      Increment (+5)
+    </button>
+    <button bindtap="dec(5)">
+      Decrement (-5)
+    </button>
+    <button bindtap="set(100)">
+      Set (100)
+    </button>
+    <button bindtap="reset">
+      Reset
+    </button>
+  </view>
+</template>
+
+<style lang="stylus">
+
+</style>

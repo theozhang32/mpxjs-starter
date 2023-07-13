@@ -11,6 +11,7 @@
     "@mpxjs/api-proxy": "^2.8.8",
     "@mpxjs/core": "^2.8.36",
     "@mpxjs/fetch": "^2.8.6",
+    "@mpxjs/mpxuse-core": "^1.0.2",
     "@mpxjs/pinia": "^2.8.15",
     "@mpxjs/store": "^2.8.15",
     "@mpxjs/utils": "^2.8.15",

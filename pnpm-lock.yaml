@@ -14,6 +14,9 @@ dependencies:
   '@mpxjs/fetch':
     specifier: ^2.8.6
     version: 2.8.6
+  '@mpxjs/mpxuse-core':
+    specifier: ^1.0.2
+    version: 1.0.2(@mpxjs/core@2.8.36)
   '@mpxjs/pinia':
     specifier: ^2.8.15
     version: 2.8.15(@mpxjs/core@2.8.36)(pinia@2.1.4)(vue-demi@0.13.11)(vue@2.7.14)
@@ -1703,6 +1706,24 @@ packages:
       - webpack-sources
       - whiskers
     dev: true
+
+  /@mpxjs/mpxuse-core@1.0.2(@mpxjs/core@2.8.36):
+    resolution: {integrity: sha512-dW1mU37UsesBYOfn28Eb5mWT4F8CyD/dkZBpGjQPqDL0iNBmFk2w0uG1CiXjVMTKG0Gj61Adu38HhFzwF9ncLw==}
+    peerDependencies:
+      '@mpxjs/core': '>=2.8.0'
+    dependencies:
+      '@mpxjs/core': 2.8.36(@mpxjs/api-proxy@2.8.8)(@mpxjs/store@2.8.15)(vue-demi@0.13.11)(vue-i18n-bridge@9.2.2)(vue-i18n@8.28.2)(vue@2.7.14)
+      '@mpxjs/mpxuse-shared': 1.0.2(@mpxjs/core@2.8.36)
+      miniprogram-api-typings: 3.10.0
+    dev: false
+
+  /@mpxjs/mpxuse-shared@1.0.2(@mpxjs/core@2.8.36):
+    resolution: {integrity: sha512-0Z0KbNgIyOpC959O00at4bi/R66gmda1iEvAsRcFaRUkR4BPqm0pgZK7Sb4fgMjXqYVwqOitgsWq7dTJ8GTsug==}
+    peerDependencies:
+      '@mpxjs/core': '>=2.8.0'
+    dependencies:
+      '@mpxjs/core': 2.8.36(@mpxjs/api-proxy@2.8.8)(@mpxjs/store@2.8.15)(vue-demi@0.13.11)(vue-i18n-bridge@9.2.2)(vue-i18n@8.28.2)(vue@2.7.14)
+    dev: false
 
   /@mpxjs/pinia@2.8.15(@mpxjs/core@2.8.36)(pinia@2.1.4)(vue-demi@0.13.11)(vue@2.7.14):
     resolution: {integrity: sha512-HG2SaWMPZRaCgFHsLwfFdwzAe7/uGbxCpLWANoY2cwnCSTeagEaLkkAFMOv8X4Th0N9ZU801ZWyYopRTDfvnwQ==}

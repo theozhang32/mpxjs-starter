@@ -1,7 +1,7 @@
 /*
  * @Author: 张天昊
  * @Date: 2023-07-12 17:56:23
- * @LastEditTime: 2023-07-12 17:56:23
+ * @LastEditTime: 2023-07-13 11:53:30
  * @LastEditors: 张天昊
  * @Description:
  * @FilePath: /mpxjs-starter/src/app.config.js
@@ -13,7 +13,8 @@ module.exports = {
     './pages/class-and-style/index',
     './pages/component-hoisting/index',
     './pages/wxml-and-wxs/index',
-    './pages/event/index'
+    './pages/event/index',
+    './pages/mpxuse/index'
   ],
   packages: ['./packages/sub/app.mpx?root=pkgSub'],
   window: {
