@@ -1,0 +1,25 @@
+<script name="json">
+module.exports = {
+  component: true,
+  usingComponents: {}
+}
+</script>
+
+<script lang="ts">
+import { createComponent } from '@mpxjs/core'
+import { base } from './_mixin'
+createComponent({
+  mixins: [base],
+  setup() {
+    return {}
+  }
+})
+</script>
+
+<template>
+  <view>内外同名组件最终编译产物会带一个hash</view>
+</template>
+
+<style lang="stylus">
+
+</style>

@@ -11,5 +11,5 @@ export const base: {
     customClass: String,
     customStyle: String
   },
-  externalClasses: ['class']
+  externalClasses: ['ext-class']
 }

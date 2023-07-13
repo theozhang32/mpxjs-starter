@@ -12,6 +12,12 @@
 
 所以抛开跨端的需求，在我个人看来理论上最优的开发方式就是小程序原生开发，“坑”我们只要踩小程序一家的就够了。但现在小程序原生开发环境还是有些不尽如人意，所以一款足够接近小程序原生开发，还能提供比较完善的前端开发环境的框架，就成为我选择它的原因。
 
+还可以轻松使用以下小程序原生特性
+
+- wxml模板
+- wxs
+- 原生自定义组件
+
 ## 开发体验
 
 Mpx的开发体验肯定是不如Taro的，因为样式和模版本质上就是小程序原生开发，自定义组件的排布和引用方式，也完全遵照小程序原生方式。只是在js的逻辑层，Mpx帮我们用类Vue、Mobx的响应式原理，才大大改善了开发体验。对比Taro直接用React或Vue的语法来开发，肯定是有一些不便利的。好在小程序原生开发也加入了Typescript的支持，Mpx也同样支持Typescript，所以整体开发下来体验并没有那么糟糕。再结合vscode的snippets，也能减少我们重复输入的情况。
@@ -29,11 +35,17 @@ Mpx借鉴了Vue、Mobx、axios、pinia，几乎将Vue技术栈的响应式原理
 ## Project setup
 
 ```javascript
+pnpm install
+
+// 若出现Unmet peer dependencies
+// 尝试执行
+pnpm up
+
 // development
-npm run serve // 小程序本地开发构建
+pnpm run serve // 小程序本地开发构建
 
 
 // production
-npm run build // 小程序生产环境构建
+pnpm run build // 小程序生产环境构建
 
 ```

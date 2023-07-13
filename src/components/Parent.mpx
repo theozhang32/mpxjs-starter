@@ -16,13 +16,18 @@ createComponent({
 </script>
 
 <template>
-  <view class="class {{customClass}}" style="{{customStyle}}">
-    <view>Parent</view>
-    <Child class="font-bold parent-inner-class" />
+  <!-- ext-class是externalClasses预定义符 -->
+  <!-- 嵌套的externalClasses传入全局的样式不会生效（比如windi的样式），但传入直系父组件内的样式可以生效 -->
+  <!-- 这里externalClasses生效的原因是因为Parent组件的父组件是页面级组件，故windi的样式也生效了 -->
+  <view class="ext-class {{customClass}}" style="{{customStyle}}">
+    <view class="font-bold">Parent</view>
+    <Child ext-class="font-bold parent-red parent-italic" />
   </view>
 </template>
 
 <style lang="stylus">
-.parent-inner-class
-  color: white
+.parent-red
+  color red
+.parent-italic
+  font-style italic
 </style>

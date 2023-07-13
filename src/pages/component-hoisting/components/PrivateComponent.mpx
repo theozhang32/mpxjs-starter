@@ -1,0 +1,25 @@
+<script name="json">
+module.exports = {
+  component: true,
+  usingComponents: {}
+}
+</script>
+
+<script lang="ts">
+import { createComponent } from '@mpxjs/core'
+import { base } from '@/components/_mixin'
+createComponent({
+  mixins: [base],
+  setup() {
+    return {}
+  }
+})
+</script>
+
+<template>
+  <view>设想是一个私有的组件，但编译后实际提升到了公共的components中</view>
+</template>
+
+<style lang="stylus">
+
+</style>

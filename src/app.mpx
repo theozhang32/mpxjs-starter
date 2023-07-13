@@ -1,19 +1,3 @@
-<script name="json">
-module.exports = {
-  pages: ['./pages/index/index'],
-  packages: [
-    './packages/sub/app.mpx?root=pkgSub',
-  ],
-  window: {
-    navigationBarBackgroundColor: '#fff',
-    navigationBarTextStyle: 'black'
-  },
-  usingComponents: {
-    NavigationBar: '@/components/NavigationBar',
-  }
-}
-</script>
-
 <script lang="ts">
 import mpx, { createApp } from '@mpxjs/core'
 import apiProxy from '@mpxjs/api-proxy'
@@ -35,6 +19,7 @@ createApp({
 })
 </script>
 
+<script src="./app.config.js" name="json"></script>
 <style src="windi.css"></style>
 <style src="@vant/weapp/common/index.wxss"></style>
 <style src="./styles/index.styl"></style>

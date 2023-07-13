@@ -1,0 +1,43 @@
+<script name="json">
+module.exports = {
+  usingComponents: {
+    'van-button': '@vant/weapp/button/index',
+    "van-field": "@vant/weapp/field/index"
+  }
+}
+</script>
+
+<script lang="ts">
+import { createPage, ref } from '@mpxjs/core'
+createPage({
+  setup() {
+    const value = ref('')
+    const onClick = (e) => {
+      console.log(e)
+    }
+    const onClickWithParam = (e, $event) => {
+      console.log(e, $event)
+    }
+    const onChange = (e: WechatMiniprogram.CustomEventWithAnyDetail<string>) => {
+      value.value = e.detail
+    }
+    return {
+      value,
+      onClick,
+      onClickWithParam,
+      onChange
+    }
+  }
+})
+</script>
+
+<template>
+  <!-- 类似于vue的处理方式 -->
+  <van-button bindclick="onClick">点击事件不传参</van-button>
+  <van-button bindclick="onClickWithParam('hello world', $event)">点击事件传参</van-button>
+  <van-field value="{{value}}" bindchange="onChange"></van-field>
+</template>
+
+<style lang="stylus">
+
+</style>

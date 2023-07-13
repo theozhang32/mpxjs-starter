@@ -86,7 +86,7 @@ createComponent({
     wx:class="{{computedContainerClass}}"
   >
     <view
-      class="navigation-bar--fixed fixed z-99 top-0 left-0 right-0"
+      class="navigation-bar--fixed box-content fixed z-99 top-0 left-0 right-0"
       style="{{ !inverted && background ? 'background: white;': '' }}"
     >
       <view

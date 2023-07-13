@@ -1,0 +1,26 @@
+<script name="json">
+module.exports = {
+  usingComponents: {
+    PrivateComponent: './components/PrivateComponent',
+    PublicComponent: '@/components/PrivateComponent'
+  }
+}
+</script>
+
+<script lang="ts">
+import { createPage } from '@mpxjs/core'
+createPage({
+  setup() {
+    return {}
+  }
+})
+</script>
+
+<template>
+  <PrivateComponent />
+  <PublicComponent />
+</template>
+
+<style lang="stylus">
+
+</style>

@@ -1,0 +1,40 @@
+<script name="json">
+module.exports = {
+  navigationBarTitleText: '使用原生wxml和wxs',
+  usingComponents: {
+    'van-button': '@vant/weapp/button/index'
+  }
+}
+</script>
+
+<script lang="ts">
+import { createPage, ref } from '@mpxjs/core'
+createPage({
+  setup() {
+    const msg = ref('Hello World?')
+    const onClick = () => {
+      msg.value = 'Hello World!'
+    }
+    return {
+      msg,
+      onClick
+    }
+  }
+})
+</script>
+
+<template>
+  <template name="inline">
+    <view>这是一个內联的wxml模板，页面内定义，页面内使用</view>
+    <view>接受传参 {{ params }}</view>
+  </template>
+  <template is="inline" data="{{ params: msg }}"></template>
+  <van-button bindclick="onClick">改变参数</van-button>
+  <import src="./templates/renderer.wxml" />
+  <template is="renderer" data="{{ p1: 1, p2: 2 }}"></template>
+  <view>wxml模板最终会被编译到template路径，wxs会被编译到wxs路径</view>
+</template>
+
+<style lang="stylus">
+
+</style>

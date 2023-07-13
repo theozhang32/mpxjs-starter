@@ -1,0 +1,6 @@
+<template name="renderer">
+  <wxs src="../wxs/compute.wxs" module="compute"></wxs>
+  <view>wxml模版功能可以看作vue的函数式组件，或者react组件内部的渲染某一部分的render函数</view>
+  <view>重点是复用渲染</view>
+  <view>还可以用wxs函数来执行一些计算渲染：参数之和是{{ compute.add(p1, p2) }}</view>
+</template>

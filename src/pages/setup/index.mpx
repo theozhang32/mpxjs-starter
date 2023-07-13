@@ -1,25 +1,20 @@
 <script name="json">
 module.exports = {
   navigationStyle: 'custom',
-  usingComponents: {
-    Parent: '@/components/Parent'
-  }
 }
 </script>
 
-<script lang="ts">
-import { createPage } from '@mpxjs/core'
-createPage({
-  setup() {
-    return {
-      msg: 'Hello World'
-    }
-  }
+<script setup lang="ts">
+import { ref } from '@mpxjs/core'
+const msg = ref('Hello World')
+// mpx的setup一定要显示定义暴露的变量和函数
+defineExpose({
+  msg
 })
 </script>
 
 <template>
-  <NavigationBar background>首页</NavigationBar>
+  <NavigationBar background>使用setup语法</NavigationBar>
   <view class="flex-auto flex flex-col items-center justify-center w-full text-center text-black">
     <view class="text-32px">{{ msg }}</view>
     <!-- <Parent
@@ -32,5 +27,5 @@ createPage({
 
 <style lang="stylus">
 :host
-  --global-page-bg #faf9ff
+  --global-page-bg linear-gradient(324deg, #6a75ff 27%, #a7b0fd)
 </style>

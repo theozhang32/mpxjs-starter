@@ -1,0 +1,39 @@
+<script name="json">
+module.exports = {
+  navigationStyle: 'custom',
+  usingComponents: {
+    Parent: '@/components/Parent'
+  }
+}
+</script>
+
+<script lang="ts">
+import { createPage } from '@mpxjs/core'
+createPage({
+  setup() {
+    const src = '<code>components/_mixin</code>'
+    return {
+      src
+    }
+  }
+})
+</script>
+
+<template>
+  <NavigationBar background>组件样式的传递和继承</NavigationBar>
+  <view class="flex-auto pt-24px px-12px w-full text-center text-black">
+    <view class="text-left mb-8px">组件设置了一些默认属性，参照<rich-text nodes="{{src}}" /></view>
+    <view class="text-left mb-8px">customClass和customStyle本质就是字符串传递</view>
+    <view class="text-left">externalClasses有组件嵌套问题，要注意</view>
+    <Parent
+      ext-class="mt-60px flex flex-col text-center"
+      custom-class="items-center"
+      custom-style="font-size:20px;"
+    ></Parent>
+  </view>
+</template>
+
+<style lang="stylus">
+:host
+  --global-page-bg #faf9ff
+</style>
