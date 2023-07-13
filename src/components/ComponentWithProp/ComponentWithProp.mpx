@@ -1,0 +1,34 @@
+<script name="json">
+module.exports = {
+  component: true,
+  usingComponents: {}
+}
+</script>
+
+<script lang="ts">
+import { createComponent } from '@mpxjs/core'
+import { base } from '../_mixin'
+import { ComponentWithPropProps } from './type'
+createComponent({
+  mixins: [base],
+  // 小程序properties本身的多类型定义很残废，与typescript结合的并不是很好
+  // 比如用optionalTypes定义多类型，无法触发typescript类型推断
+  // 比如 当父组件显式传入undefined时，控制台会报类型不兼容，
+  // 而且 默认值value字段形同虚设，显示传undefined也不会fallback到设置的默认值
+  // 莫不如在定义properties时都指定成null，接受所有类型的传参，然后在setup中约束类型和设置默认值
+  properties: {
+    title: null
+  },
+  setup(props: ComponentWithPropProps) {
+    return {}
+  }
+})
+</script>
+
+<template>
+  <view>{{ title }}</view>
+</template>
+
+<style lang="stylus">
+
+</style>

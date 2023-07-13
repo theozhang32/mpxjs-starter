@@ -1,0 +1,28 @@
+<script name="json">
+module.exports = {
+  usingComponents: {
+    Property: '@/components/ComponentWithProp/ComponentWithProp'
+  }
+}
+</script>
+
+<script lang="ts">
+import { createPage } from '@mpxjs/core'
+createPage({
+  setup() {
+    return {
+      msg: {
+        a: 1
+      }
+    }
+  }
+})
+</script>
+
+<template>
+  <Property title="{{msg.b}}" />
+</template>
+
+<style lang="stylus">
+
+</style>

@@ -13,3 +13,8 @@ export const base: {
   },
   externalClasses: ['ext-class']
 }
+
+export interface BaseProps {
+  customClass?: string
+  customStyle?: string
+}
