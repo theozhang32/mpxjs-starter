@@ -1,21 +1,9 @@
 <template>
   <list></list>
+  <view>{{ count }}</view>
+  <view>{{ name }}</view>
+  <van-button bind:click="onIncrementClick">Click</van-button>
 </template>
 
-<script lang="ts">
-import { createPage } from '@mpxjs/core'
-
-createPage({
-  onLoad() {
-    //
-  }
-})
-</script>
-
-<script type="application/json">
-  {
-    "usingComponents": {
-      "list": "../components/list"
-    }
-  }
-</script>
+<script src="./index.ts"></script>
+<script name="json" src="./index.config.cjs"></script>

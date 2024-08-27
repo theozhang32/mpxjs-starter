@@ -26,6 +26,15 @@ importers:
       '@mpxjs/utils':
         specifier: ^2.9.0
         version: 2.9.58(@mpxjs/core@2.9.58(@mpxjs/api-proxy@2.9.58)(@mpxjs/store@2.9.58)(vue-demi@0.14.10(vue@2.7.16))(vue-i18n-bridge@9.14.0(vue@2.7.16))(vue-i18n@8.28.2(vue@2.7.16))(vue@2.7.16))
+      '@vant/weapp':
+        specifier: ^1.11.6
+        version: 1.11.6
+      axios:
+        specifier: ^0.19.2
+        version: 0.19.2
+      axios-miniprogram-adapter:
+        specifier: ^0.3.5
+        version: 0.3.5
       pinia:
         specifier: ^2.0.14
         version: 2.2.2(typescript@4.9.5)(vue@2.7.16)
@@ -1741,6 +1750,9 @@ packages:
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0
 
+  '@vant/weapp@1.11.6':
+    resolution: {integrity: sha512-a3heReWYT2gNdsyj6x1hBwsM8V8NrjcPAmle86NH2CD2V/i/h0le75piW6KntSfOPCwekVWMBKhysNrBpJeKdw==}
+
   '@vue/cli-overlay@5.0.8':
     resolution: {integrity: sha512-KmtievE/B4kcXp6SuM2gzsnSd8WebkQpg3XaB6GmFh1BJGRqa1UiW9up7L/Q67uOdTigHxr5Ar2lZms4RcDjwQ==}
 
@@ -2068,6 +2080,13 @@ packages:
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
+
+  axios-miniprogram-adapter@0.3.5:
+    resolution: {integrity: sha512-ZAudH+aTi0QPIy8IQm26F0nxKoTFa/mNhDfxGkG5ndsQe4RVnyyb6f50tIT13nHtNepAjZo9i+UGmTbke5+lbQ==}
+
+  axios@0.19.2:
+    resolution: {integrity: sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==}
+    deprecated: Critical security vulnerability fixed in v0.21.1. For more information, see https://github.com/axios/axios/pull/3410
 
   axios@1.7.5:
     resolution: {integrity: sha512-fZu86yCo+svH3uqJ/yTdQ0QHpQu5oL+/QE+QPSv6BZSkDAoky9vytxp7u5qk83OJFS3kEBcesWni9WTZAv3tSw==}
@@ -3375,6 +3394,10 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+
+  follow-redirects@1.5.10:
+    resolution: {integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==}
+    engines: {node: '>=4.0'}
 
   for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
@@ -8712,6 +8735,8 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
+  '@vant/weapp@1.11.6': {}
+
   '@vue/cli-overlay@5.0.8': {}
 
   '@vue/cli-plugin-router@5.0.8(@vue/cli-service@5.0.8(ejs@3.1.10)(lodash@4.17.21)(stylus-loader@6.2.0(stylus@0.55.0)(webpack@5.94.0))(vue@2.7.16)(webpack-sources@3.2.3))':
@@ -9235,6 +9260,18 @@ snapshots:
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.0.0
+
+  axios-miniprogram-adapter@0.3.5:
+    dependencies:
+      axios: 0.19.2
+    transitivePeerDependencies:
+      - supports-color
+
+  axios@0.19.2:
+    dependencies:
+      follow-redirects: 1.5.10
+    transitivePeerDependencies:
+      - supports-color
 
   axios@1.7.5:
     dependencies:
@@ -10659,6 +10696,12 @@ snapshots:
   follow-redirects@1.15.6(debug@4.3.6):
     optionalDependencies:
       debug: 4.3.6
+
+  follow-redirects@1.5.10:
+    dependencies:
+      debug: 3.1.0
+    transitivePeerDependencies:
+      - supports-color
 
   for-each@0.3.3:
     dependencies:

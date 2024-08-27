@@ -13,12 +13,14 @@
       "dom.iterable"
     ],
     "types": [
-      "jest"
+      "jest",
+      "miniprogram-api-typings"
     ],
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "@vant/weapp/*": ["node_modules/@vant/weapp/dist/*"]
     }
   },
   "exclude": [
