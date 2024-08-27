@@ -3,6 +3,13 @@
   <view>{{ count }}</view>
   <view>{{ name }}</view>
   <van-button bind:click="onIncrementClick">Click</van-button>
+    <van-cell title="展示弹出层" is-link bind:click="showPopup" />
+  <van-popup position="bottom" root-portal show="{{ show }}" bind:close="onClose">
+    <van-picker columns="{{ columns }}" bind:change="onChange">
+
+    </van-picker>
+  </van-popup>
+  <van-toast id="van-toast" />
 </template>
 
 <script src="./index.ts"></script>
