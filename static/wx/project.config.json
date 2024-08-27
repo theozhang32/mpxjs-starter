@@ -1,0 +1,15 @@
+{
+  "setting": {
+    "newFeature": true,
+    "urlCheck": true,
+    "es6": false,
+    "postcss": true,
+    "minified": false,
+    "checkSiteMap": false,
+    "autoAudits": false
+  },
+  "appid": "touristappid",
+  "projectname": "mpx-template",
+  "description": "mpxjs渐进式小程序框架脚手架",
+  "condition": {}
+}
